@@ -1,9 +1,11 @@
 <?php
 namespace travail;
 
-class Person {
+abstract class Person {
     public $nom;
     public $prenom;
     public $dateNaissance;
     public $ville;
+
+    abstract function sePresenter();
 }
