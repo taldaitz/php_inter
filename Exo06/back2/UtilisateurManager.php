@@ -1,14 +1,15 @@
 <?php
 
-namespace back;
+namespace back2;
 
 use PDO;
 
 class UtilisateurManager {
 
     public static function saveUtilisateur(Utilisateur $user) {
-
+        
         $db = new PDO('mysql:host=localhost;dbname=authentification;charset=utf8', 'root', '');
+
 
         $sql = "INSERT INTO utilisateur (login, password, email) VALUES (:login, :pwd, :email);";
 

@@ -6,8 +6,8 @@ function chargerClasses($classe) {
 
 spl_autoload_register('chargerClasses');
 
-use back\Utilisateur;
-use back\UtilisateurManager;
+use back2\Utilisateur;
+use back2\UtilisateurManager;
 
 $login = $_GET['login'];
 $pwd = $_GET['password'];

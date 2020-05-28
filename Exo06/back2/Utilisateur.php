@@ -1,6 +1,6 @@
 <?php
 
-namespace back;
+namespace back2;
 
 class Utilisateur {
     public $id;
