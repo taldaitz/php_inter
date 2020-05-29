@@ -6,35 +6,45 @@ use classes\Personnage;
 
 class Combat {
 
-    /**
-     * @var Personnage[]
-     */
-    public $combattants;
+    public $combattantUn;
+    public $combattantDeux;
+    public $nbTour;
 
     public static $logCombat;
 
     public function __construct($combattant1, $combattant2)
     {
-        $this->combattants = [$combattant1, $combattant2];
+        $this->combattantUn = $combattant1;
+        $this->combattantDeux = $combattant2;
+        $this->nbTour = 0;
     }
 
-    public function demarrerCombat() {
+    public function tourSuivant() {
+        if($this->checkCombattantMort())
+            return false;
 
-            $this->lancerAttaque($this->combattants[0], $this->combattants[1]);
-            $this->combattants = array_reverse($this->combattants);
-        
+        if($this->nbTour % 2 == 0) 
+            $this->lancerAttaque($this->combattantUn, $this->combattantDeux); 
+        else       
+            $this->lancerAttaque($this->combattantDeux, $this->combattantUn);  
+            
+        $this->nbTour++;
     }
 
     public function checkCombattantMort() {
-        foreach($this->combattants as $combattant ) {
-            if($combattant->estMort()) {
-                Combat::AddLog($combattant . ' est mort !!!');
-                return true;
-            }
+        if($this->combattantUn->estMort()) {
+            Combat::AddLog($this->combattantUn . ' est mort !!!');
+            return true;
+        }
+
+        if($this->combattantDeux->estMort()) {
+            Combat::AddLog($this->combattantDeux . ' est mort !!!');
+            return true;
         }
 
         return false;
     }
+
 
     public function lancerAttaque(Personnage $attaquant, Personnage $cible) {
         $attaquant->attaquer($cible);

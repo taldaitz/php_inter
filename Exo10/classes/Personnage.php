@@ -36,11 +36,12 @@ abstract class Personnage {
 
     public function afficherDetails(): string
     {
-        return "
+        return "<ul>
             <li>Nom : $this->nom</li>
             <li>Point de vie : $this->pointDeVie</li>
             <li>Attaque : $this->attaque</li>
             <li>Défense : $this->defense</li>
+            </ul>
         ";
     }
 

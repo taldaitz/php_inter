@@ -13,7 +13,7 @@ session_destroy();
 <body>
 
 
-    <form action="visuCombat.php" method="POST">
+    <form action="startCombat.php" method="POST">
 
         <p>
             <label>Combattant 1 : </label>

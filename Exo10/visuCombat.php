@@ -28,6 +28,8 @@ function chargerClasses($classe) {
         $combat = unserialize($_SESSION['combat']);
     }
 
+    $combat->tourSuivant();
+
 ?>
 
 <!DOCTYPE html>
@@ -46,19 +48,23 @@ function chargerClasses($classe) {
         <div class="RecapPerso" id="menuPersoA">
             <ul>
 
-                <?php echo $combat->combattants[0]->afficherDetails(); ?>
+                <?php echo $combat->combattantUn->afficherDetails(); ?>
 
             </ul>
         </div>
         <div class="RecapPerso" id="menuPersoB">
             <ul>
-                <?php echo $combat->combattants[1]->afficherDetails(); ?>
+                <?php echo $combat->combattantDeux->afficherDetails(); ?>
             </ul>
         </div>
 
         <div id="logCombat">
-            <?php $combat->demarrerCombat(); echo Combat::$logCombat;?>
+            <?php  echo Combat::$logCombat;?>
         </div>
+
+        <form>
+            <input type="submit" value="Suivant"/>
+        </form>
     </main>
 </body>
 
