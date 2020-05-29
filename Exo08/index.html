@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <style>
+        button {
+            margin: 50px;
+        }
+
+        #content {
+            margin: 100px;
+        }
+
+        .truc {
+            background-color: burlywood;
+        }
+    </style>
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <button id="article1" onclick="loadArticle(this);">Article 1</button>
+        <button id="article2" onclick="loadArticle(this);" class="truc">Article 2</button>
+        <button id="article3" onclick="loadArticle(this);">Article 3</button>
+    </div>
+
+    <p id="content" class="truc">  
+    </p>
+
+</body>
+
+</html>
